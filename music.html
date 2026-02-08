@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>My Sound Button</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#e7e4e4,#ac7979);
+    font-family:Arial;
+}
+
+button{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:none;
+    background:radial-gradient(circle at 30% 30%, #ff4d4d, #990000);
+    box-shadow:0 15px 40px rgba(255,0,0,0.6);
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:active{
+    transform:scale(0.92);
+    box-shadow:0 5px 15px rgba(255,0,0,0.8);
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="playMusic()"></button>
+
+<audio id="audio" src="123123.m4a"></audio>
+
+<script>
+function playMusic(){
+    const audio = document.getElementById("audio");
+
+    if(audio.paused){
+        audio.play();
+    }else{
+        audio.pause();
+        audio.currentTime = 0;
+    }
+}
+</script>
+
+</body>
+</html>
